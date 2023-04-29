@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)">
+
+  <script>
+    // https://doka.guide/js/match-media/
+    if (matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+      document.documentElement.style.display = 'none';
+      document.head.insertAdjacentHTML(
+        'beforeend',
+        '<link rel="stylesheet" href="styles/light.css" onload="document.documentElement.style.display=\'\'">'
+      );
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/light.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="css/dark.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+
+      <div class="flex">
+        <a class="header-logo" href="index.html">
+          <img src="images/header/logo.svg" alt="logo">
+        </a>
+
+        <div class="header-icons flex">
+          <button class="language">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="8" stroke="#222222" stroke-width="1.5" />
+              <ellipse cx="9" cy="9" rx="3" ry="8" stroke="#222222" stroke-width="1.5" />
+              <line x1="1" y1="9.25" x2="17" y2="9.25" stroke="#222222" stroke-width="1.5" />
+            </svg>
+          </button>
+
+          <div class="dropdown">
+            <button class="dropdown__button">
+              <div class="icon">
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="6.55671e-08" y1="1.25" x2="14" y2="1.25" stroke="#222222" stroke-width="1.5" />
+                  <line x1="6.55671e-08" y1="5.25" x2="14" y2="5.25" stroke="#222222" stroke-width="1.5" />
+                  <line x1="6.55671e-08" y1="9.25" x2="14" y2="9.25" stroke="#222222" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div class="avatar">
+                <svg width="28" height="28" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="17" cy="17" r="15" fill="#717171" />
+                  <mask id="mask0_351_652" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="26"
+                    height="26">
+                    <circle cx="17" cy="17" r="12.1875" fill="#737373" />
+                  </mask>
+                  <g mask="url(#mask0_351_652)">
+                    <circle cx="17" cy="15.125" r="6.5625" fill="white" />
+                    <circle cx="17" cy="31.0625" r="11.25" fill="white" />
+                  </g>
+                </svg>
+              </div>
+            </button>
+            <ul class="dropdown__menu">
+              <a href="#" class="dropdown__menu-item">
+                <li>Sign up</li>
+              </a>
+              <a href="#" class="dropdown__menu-item">
+                <li>Log in</li>
+              </a>
+              <div class="menu-item__line"></div>
+              <a href="#" class="dropdown__menu-item">
+                <li>Airbnb your home</li>
+              </a>
+              <a href="help.html" class="dropdown__menu-item">
+                <li>Help</li>
+              </a>
+            </ul>
+          </div>
+
+          <fieldset class="switcher">
+            <input type="checkbox" class="switch">
+            <label for="s2"></label>
+          </fieldset>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <section class="help">
+      <div class="container-help">
+        <div class="tabs">
+          <nav class="tabs__list">
+            <button class="tabs__btn tabs__btn--active" data-tabs-path="guest">Guest</button>
+            <button class="tabs__btn" data-tabs-path="host">Host</button>
+            <button class="tabs__btn" data-tabs-path="experience">Experience Host</button>
+            <button class="tabs__btn" data-tabs-path="admin">Travel admin</button>
+          </nav>
+
+          <!-- контент первого таба -->
+          <div class="tabs__content tabs__content--active" data-tabs-target="guest">
+            <div class="tabs__content--login flex">
+              <div>
+                <h2 class="tabs_content_title mb-8">We’re here for you</h2>
+                <p class="tabs_content_subtitle">Log in to get help with your reservations, account, and more.</p>
+              </div>
+              <button class="btn btn-airbnb">Log in or sign up</button>
+            </div>
+
+            <section class="guides">
+              <div class="flex mb-32">
+                <h2 class="tabs_content_title ">Guides for getting started</h2>
+
+                <a class="browse-topics" href="#">Browse all topics
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                    focusable="false"
+                    style="display: inline-block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                    <g fill="none">
+                      <path
+                        d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932">
+                      </path>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+              <div class="flex">
+                <a class="guides-link" href="help-details.html">
+                  <div class="guides-link__image">
+                    <img src="images/help/help-image-1.jpg" alt="home">
+                  </div>
+                  <h3>Getting started on Airbnb</h3>
+                </a>
+                <a class="guides-link" href="help-details.html">
+                  <div class="guides-link__image">
+                    <img src="images/help/help-image-1.jpg" alt="home">
+                  </div>
+                  <h3>Accessing your account</h3>
+                </a>
+                <a class="guides-link" href="help-details.html">
+                  <div class="guides-link__image">
+                    <img src="images/help/help-image-1.jpg" alt="home">
+                  </div>
+                  <h3>Getting started on Airbnb</h3>
+                </a>
+                <a class="guides-link" href="help-details.html">
+                  <div class="guides-link__image">
+                    <img src="images/help/help-image-1.jpg" alt="home">
+                  </div>
+                  <h3>Getting protected through AirCover</h3>
+                </a>
+              </div>
+            </section>
+
+            <section class="articles">
+              <h2 class="tabs_content_title mb-32">Top articles</h2>
+              <div class="flex">
+                <a class="articles-link" href="hel">
+                  <span class="main-text-link">Canceling your reservation for a stay</span>
+                  <span class="secondary-text-link">Your plans have changed and now you need to cancel your
+                    reservation. No problem. You can go to your Trips to cancel or make changes to your …</span>
+                </a>
+                <a class="articles-link" href="#">
+                  <span class="main-text-link">Change the date or time of your Experience reservation</span>
+                  <span class="secondary-text-link">You booked an Experience, but the date or time no
+                    longer works for you? Don’t worry, you don’t have to miss out! You may be able to change
+                    y…</span>
+                </a>
+                <a class="articles-link" href="#">
+                  <span class="main-text-link">If your Host cancels your reservation</span>
+                  <span class="secondary-text-link">While it’s rare, sometimes a Host may need to
+                    cancel a reservation. We understand this can impact your plans in a big way. Rest assured
+                    that…</span>
+                </a>
+                <a class="articles-link mt-32" href="#">
+                  <span class="main-text-link">Payment methods accepted</span>
+                  <span class="secondary-text-link">Airbnb supports different payment methods, depending on the country
+                    your payment account is located in. We'll show you which payment methods…</span>
+                </a>
+                <a class="articles-link mt-32" href="#">
+                  <span class="main-text-link">Editing, removing, or adding a payment method</span>
+                  <span class="secondary-text-link">If an existing payment method on your account is incorrect (ex: an
+                    expired credit card), you can update it or add a new payment method.</span>
+                </a>
+                <a class="articles-link mt-32" href="#">
+                  <span class="main-text-link">When you’ll pay for your
+                    reservation</span>
+                  <span class="secondary-text-link">You just made a reservation—congrats! So, what happens next? Your
+                    payment method will be charged as soon as your reservation is confirmede…</span>
+                </a>
+              </div>
+            </section>
+          </div>
+
+          <!-- контент второго таба -->
+          <div class="tabs__content" data-tabs-target="host">
+            <div class="tabs__content--login ">
+              <div class="flex">
+                <div>
+                  <h2 class="tabs_content_title mb-8">We’re here for you</h2>
+                  <p class="tabs_content_subtitle">Log in to get help with your reservations, account, and more.</p>
+                </div>
+                <button class="btn btn-airbnb">Log in or sign up</button>
+              </div>
+            </div>
+            <div class="flex mb-32">
+              <h2 class="tabs_content_title ">Guides for getting started</h2>
+              <a class="browse-topics" href="#">Browse all topics
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                  focusable="false"
+                  style="display: inline-block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                  <g fill="none">
+                    <path
+                      d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932">
+                    </path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+            <div class="flex">
+              <a class="guides-link" href="#"><img src="images/help/help-image-6.jpg" alt="home"><span>Accessing your
+                  account</span></a>
+              <a class="guides-link" href="#"><img src="images/help/help-image-8.jpg" alt="home"><span>Getting
+                  paid</span></a>
+              <a class="guides-link" href="#"><img src="images/help/help-image-9.jpg" alt="home"><span>Help with
+                  hosting</span></a>
+              <a class="guides-link" href="#"><img src="images/help/help-image-10.jpg" alt="home"><span>Getting
+                  protected
+                  through AirCover</span></a>
+            </div>
+            <h2 class="tabs_content_title mb-32">Top articles</h2>
+            <div class="flex">
+              <a class="articles-link" href="#"><span class="main-text-link">If your guest cancels</span><span
+                  class="secondary-text-link">It happens—plans change! If a guest needs to cancel their reservation,
+                  we’re here to help you with a quick rebound.</span></a>
+              <a class="articles-link" href="#"><span class="main-text-link">Getting protected through AirCover for
+                  Hosts</span><span class="secondary-text-link">Sometimes accidents happen, which is why there’s
+                  AirCover for Hosts. AirCover for Hosts is top-to-bottom protection for Hosts. It includes
+                  g…</span></a>
+              <a class="articles-link" href="#"><span class="main-text-link">Refund your guest</span><span
+                  class="secondary-text-link">It can happen to the best of Hosts: The wifi is a no-show, or the hot tub
+                  isn't hot. If something gets in the way of your guest's good time,…</span></a>
+              <a class="articles-link mt-32" href="#"><span class="main-text-link">How a Host cancels a
+                  booking</span><span class="secondary-text-link">Airbnb guests look forward to their trips, but we
+                  understand there are times when you may need to cancel. When you do, we recommend you also…</span></a>
+              <a class="articles-link mt-32" href="#"><span class="main-text-link">Preparing your listing with safety
+                  essentials</span><span class="secondary-text-link">According to the CDC, carbon monoxide is the
+                  leading cause of accidental poisoning deaths in the United States. Installing a carbon
+                  monoxide…</span></a>
+              <a class="articles-link mt-32" href="#"><span class="main-text-link">Optimizing your listing</span><span
+                  class="secondary-text-link">Check out this essential guide to help you update or fine-tune your
+                  listing. Here’s where you’ll find details on how things work, and instru…</span></a>
+            </div>
+          </div>
+
+          <!-- контент третьего таба -->
+          <div class="tabs__content" data-tabs-target="experience">
+            <div class="tabs__content--login ">
+              <div class="flex">
+                <div>
+                  <h2 class="tabs_content_title mb-8">We’re here for you</h2>
+                  <p class="tabs_content_subtitle">Log in to get help with your reservations, account, and more.</p>
+                </div>
+                <button class="btn btn-airbnb">Log in or sign up</button>
+              </div>
+            </div>
+            <div class="flex mb-32">
+              <h2 class="tabs_content_title ">Guides for getting started</h2>
+              <a class="browse-topics" href="#">Browse all topics
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                  focusable="false"
+                  style="display: inline-block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                  <g fill="none">
+                    <path
+                      d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932">
+                    </path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+            <div class="flex">
+              <a class="guides-link" href="#"><img src="images/help/help-image-7.jpg" alt="home"><span>Getting
+                  paid</span></a>
+              <a class="guides-link" href="#"><img src="images/help/help-image-11.jpg" alt="home"><span>Managing your
+                  Experience</span></a>
+              <a class="guides-link" href="#"><img src="images/help/help-image-12.jpg" alt="home"><span>Changes and
+                  cancellations</span></a>
+              <a class="guides-link" href="#"><img src="images/help/help-image-13.jpg" alt="home"><span>How Co-Hosting
+                  works</span></a>
+            </div>
+            <h2 class="tabs_content_title mb-32">Top articles</h2>
+            <div class="flex">
+              <a class="articles-link" href="#"><span class="main-text-link">Airbnb Experiences standards and
+                  requirements</span><span class="secondary-text-link">In addition to behaving in accordance with our
+                  Terms of Service and Community Standards, which apply to all community members, Airbnb
+                  Experi…</span></a>
+              <a class="articles-link" href="#"><span class="main-text-link">Canceling a reservation as Host of an
+                  Experience</span><span class="secondary-text-link">We understand that sometimes life gets in the way.
+                  Yet cancellations can be very disruptive for guests and should be avoided, if possible. I…</span></a>
+              <a class="articles-link" href="#"><span class="main-text-link">What happens if my guest cancels their
+                  experience booking?</span><span class="secondary-text-link">Hosts have the choice between two
+                  cancellation policies for your Experiences: Guests can cancel until 7 days before the Experience start
+                  tim…</span></a>
+              <a class="articles-link mt-32" href="#"><span class="main-text-link">Reviews for Experiences</span><span
+                  class="secondary-text-link">Reviews are critical to help build trust on Airbnb—they’re an important
+                  way for Hosts and guests to give each other feedback, and help our c…</span></a>
+              <a class="articles-link mt-32" href="#"><span class="main-text-link">How do payouts for experiences
+                  work?</span><span class="secondary-text-link">You'll need to set up your preferred payout method on
+                  your Airbnb profile. Learn how to add a payout method. The day after you host an exper…</span></a>
+              <a class="articles-link mt-32" href="#"><span class="main-text-link">Adding a payout method</span><span
+                  class="secondary-text-link">CReady to host? Fantastic. Just set up a payout method and prepare to
+                  welcome your guests. For more info, check out our Resource Center.</span></a>
+            </div>
+          </div>
+
+          <!-- контент четвертого таба -->
+          <div class="tabs__content" data-tabs-target="admin">
+            <div class="tabs__content--login ">
+              <div class="flex">
+                <div>
+                  <h2 class="tabs_content_title mb-8">We’re here for you</h2>
+                  <p class="tabs_content_subtitle">Log in to get help with your reservations, account, and more.</p>
+                </div>
+                <button class="btn btn-airbnb">Log in or sign up</button>
+              </div>
+            </div>
+            <div class="flex mb-32">
+              <h2 class="tabs_content_title ">Guides for getting started</h2>
+              <a class="browse-topics" href="#">Browse all topics
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                  focusable="false"
+                  style="display: inline-block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;">
+                  <g fill="none">
+                    <path
+                      d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932">
+                    </path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+            <div class="flex">
+              <a class="guides-link" href="#"><img src="images/help/help-image-14.jpg" alt="home"><span>Getting started
+                  with Airbnb for Work</span></a>
+              <a class="guides-link" href="#"><img src="images/help/help-image-15.jpg" alt="home"><span>Using your
+                  dashboard</span></a>
+              <a class="guides-link" href="#"><img src="images/help/help-image-16.jpg" alt="home"><span>How booking and
+                  reservations work</span></a>
+              <a class="guides-link" href="#"><img src="images/help/help-image-17.jpg" alt="home"><span>Help with
+                  billing</span></a>
+            </div>
+            <h2 class="tabs_content_title mb-32">Top articles</h2>
+            <div class="flex">
+              <a class="articles-link" href="#"><span class="main-text-link">About Airbnb for Work</span><span
+                  class="secondary-text-link">Arranging accommodation for business trips is a cinch with Airbnb for
+                  Work, which puts a worldwide selection of homes and boutique hotels al…</span></a>
+              <a class="articles-link" href="#"><span class="main-text-link">Signing your company up to Airbnb for
+                  Work</span><span class="secondary-text-link">Joining Airbnb for Work makes it easy to book and manage
+                  company travel, with access to listings around the world for short or extended busi…</span></a>
+              <a class="articles-link" href="#"><span class="main-text-link">How to manage company travel</span><span
+                  class="secondary-text-link">We've made it easy to manage business travel on Airbnb, with a specialized
+                  Airbnb for Work dashboard that you can access from your personal …</span></a>
+              <a class="articles-link mt-32" href="#"><span class="main-text-link">Airbnb for Work dashboard
+                  overview</span><span class="secondary-text-link">As an Airbnb For Work admin, you have access to
+                  trips, reporting, invoices, and people at your place of employment. Simply go to your
+                  Profil…</span></a>
+              <a class="articles-link mt-32" href="#"><span class="main-text-link">Inviting employees to join Airbnb for
+                  Work</span><span class="secondary-text-link">If you’re a travel admin for your company’s Airbnb for
+                  Work account, you can invite colleagues to join by creating an invite page for your c…</span></a>
+              <a class="articles-link mt-32" href="#"><span class="main-text-link">Airbnb for Work: Setting up central
+                  billing</span><span class="secondary-text-link">One useful feature of Airbnb for Work is that
+                  employees can book and charge business travel to a company credit card. This takes the hassle
+                  …</span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-rights">
+        <div class="footer-suport footer-flex">
+        <h3>Support</h3>
+        <a href="#">Help Center</a>
+        <a href="#">Safety information</a>
+        <a href="#">Cancellation options</a>
+        <a href="#">Our COVID-19 Response</a>
+        <a href="#">Supporting people with disabilities</a>
+        <a href="#">Report a neighborhoood concern</a>
+      </div>
+      <div class="footer-community footer-flex">
+        <h3>Community</h3>
+        <a href="#">Airbnb.org: disaster relief housing</a>
+        <a href="#">Support: Afghan refugees</a>
+        <a href="#">Celebrating diversity & belonging</a>
+        <a href="#">Combating discriminatino</a>
+      </div>
+      <div class="footer-hosting footer-flex">
+        <h3>Hosting</h3>
+        <a href="#">Try hosting</a>
+        <a href="#">AirCover: protection for Hosts</a>
+        <a href="#">Explore hosting resources</a>
+        <a href="#">Visit our community forum</a>
+        <a href="#">How to host responsibly</a>
+      </div>
+      <div class="footer-about footer-flex">
+        <h3>About</h3>
+        <a href="#">Newsroom</a>
+        <a href="#">Learn about new features</a>
+        <a href="#">Letter from our founders</a>
+        <a href="#">Careers</a>
+        <a href="#">Investors</a>
+        <a href="#">Airbnb Luxe</a>
+      </div>
+      </div>
+      <div class="footer-botom">
+        <div class="footer-botom_left">
+         <p>© 2022 Airbnb, Inc.</p>
+         <a class="nav" href="#">Privacy</a>
+         <a class="nav" href="#">Terms</a>
+         <a class="nav" href="#">Sitemap</a>
+        </div>
+        <div class="footer-botom_right">
+          <button class="footer_b"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.25 12C19.25 16.0041 16.0041 19.25 12 19.25C7.99594 19.25 4.75 16.0041 4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C16.0041 4.75 19.25 7.99594 19.25 12Z" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.25 12C15.25 16.5 13.2426 19.25 12 19.25C10.7574 19.25 8.75 16.5 8.75 12C8.75 7.5 10.7574 4.75 12 4.75C13.2426 4.75 15.25 7.5 15.25 12Z" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 12H19" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg> <p>English (US)</p>
+            </button>
+            <a href="#"></a>
+            <button class="footer_b"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.25 6.75H9.375C7.92525 6.75 6.75 7.92525 6.75 9.375C6.75 10.8247 7.92525 12 9.375 12H14.625C16.0747 12 17.25 13.1753 17.25 14.625C17.25 16.0747 16.0747 17.25 14.625 17.25H6.75" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11.75 19.25V4.75" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p>USD</p>
+            </button>
+             
+              <div class="nav-icon">
+              <a class="nav" href="#"><svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6615 4.07607C14.6673 4.22598 14.6692 4.37582 14.6692 4.52572C14.6692 9.07046 11.4722 14.3171 5.626 14.3171C3.83015 14.3171 2.16026 13.7447 0.753296 12.7704C1.002 12.7976 1.25459 12.8181 1.51105 12.8181C3.00006 12.8181 4.37149 12.2661 5.45934 11.3394C4.06852 11.319 2.89412 10.3174 2.48908 8.95463C2.68352 8.99551 2.88377 9.01601 3.08855 9.01601C3.3773 9.01601 3.65766 8.97518 3.9264 8.89341C2.47098 8.57998 1.37474 7.19002 1.37474 5.52066C1.37474 5.50022 1.37474 5.49337 1.37474 5.47974C1.80368 5.73185 2.29463 5.88848 2.81594 5.90892C1.96194 5.28888 1.40057 4.23278 1.40057 3.04038C1.40057 2.41352 1.5569 1.8207 1.83209 1.30967C3.39926 3.39466 5.74229 4.76424 8.38375 4.90733C8.32948 4.65522 8.3017 4.38955 8.3017 4.12382C8.3017 2.22279 9.72481 0.682861 11.4806 0.682861C12.3947 0.682861 13.2203 1.09856 13.7997 1.7663C14.5252 1.6164 15.2048 1.33024 15.8197 0.935048C15.5814 1.73907 15.0781 2.41348 14.4205 2.83593C15.0639 2.75417 15.6776 2.57034 16.2467 2.29779C15.8197 2.98597 15.2823 3.5923 14.6615 4.07607Z" fill="#4B5563"/>
+                </svg>
+                </a>
+                <a class="nav" href="#"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 9C0 13.45 3.25 17.15 7.5 17.9L7.55017 17.8599C7.53344 17.8566 7.51672 17.8533 7.5 17.85V11.5H5.25V9H7.5V7C7.5 4.75 8.95 3.5 11 3.5C11.65 3.5 12.35 3.6 13 3.7V6H11.85C10.75 6 10.5 6.55 10.5 7.25V9H12.9L12.5 11.5H10.5V17.85C10.4833 17.8533 10.4666 17.8566 10.4498 17.8599L10.5 17.9C14.75 17.15 18 13.45 18 9C18 4.05 13.95 0 9 0C4.05 0 0 4.05 0 9Z" fill="#4B5563"/>
+                  </svg>
+                </a>
+                <a class="nav" href="#"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.00032 0.272705C6.63021 0.272705 6.33276 0.283069 5.40188 0.325433C4.47282 0.367978 3.83866 0.515069 3.28376 0.730887C2.70978 0.953796 2.22289 1.25198 1.73781 1.73725C1.25237 2.22234 0.954199 2.70925 0.730569 3.28307C0.514212 3.83816 0.366944 4.47252 0.325127 5.40125C0.283492 6.33216 0.272583 6.6298 0.272583 8.99998C0.272583 11.3702 0.283128 11.6667 0.325309 12.5976C0.368035 13.5267 0.515121 14.1609 0.730751 14.7158C0.953835 15.2898 1.25201 15.7767 1.73727 16.2618C2.22216 16.7473 2.70905 17.0462 3.28267 17.2691C3.83793 17.4849 4.47227 17.632 5.40115 17.6745C6.33204 17.7169 6.6293 17.7272 8.99923 17.7272C11.3695 17.7272 11.6661 17.7169 12.5969 17.6745C13.526 17.632 14.1609 17.4849 14.7161 17.2691C15.2899 17.0462 15.7761 16.7473 16.261 16.2618C16.7464 15.7767 17.0446 15.2898 17.2682 14.716C17.4828 14.1609 17.6301 13.5265 17.6737 12.5978C17.7155 11.6669 17.7264 11.3702 17.7264 8.99998C17.7264 6.6298 17.7155 6.33234 17.6737 5.40143C17.6301 4.47234 17.4828 3.83816 17.2682 3.28325C17.0446 2.70925 16.7464 2.22234 16.261 1.73725C15.7756 1.2518 15.2901 0.953614 14.7156 0.730887C14.1593 0.515069 13.5247 0.367978 12.5957 0.325433C11.6648 0.283069 11.3684 0.272705 8.99759 0.272705H9.00032ZM8.21743 1.84543C8.44979 1.84507 8.70905 1.84543 9.00032 1.84543C11.3304 1.84543 11.6066 1.8538 12.5268 1.89561C13.3776 1.93452 13.8394 2.07671 14.1471 2.19616C14.5543 2.35434 14.8447 2.54343 15.15 2.84889C15.4554 3.15434 15.6445 3.44525 15.803 3.85252C15.9225 4.1598 16.0648 4.62161 16.1036 5.47252C16.1454 6.39252 16.1545 6.66889 16.1545 8.99798C16.1545 11.3271 16.1454 11.6034 16.1036 12.5234C16.0646 13.3743 15.9225 13.8362 15.803 14.1434C15.6448 14.5507 15.4554 14.8407 15.15 15.146C14.8445 15.4514 14.5545 15.6405 14.1471 15.7987C13.8398 15.9187 13.3776 16.0605 12.5268 16.0994C11.6068 16.1412 11.3304 16.1503 9.00032 16.1503C6.67003 16.1503 6.39385 16.1412 5.47388 16.0994C4.623 16.0602 4.16119 15.918 3.85338 15.7985C3.44612 15.6403 3.15522 15.4513 2.84978 15.1458C2.54433 14.8403 2.35525 14.5502 2.19671 14.1427C2.07726 13.8354 1.9349 13.3736 1.89617 12.5227C1.85435 11.6027 1.84599 11.3263 1.84599 8.9958C1.84599 6.66525 1.85435 6.39034 1.89617 5.47034C1.93508 4.61943 2.07726 4.15761 2.19671 3.84998C2.35488 3.4427 2.54433 3.1518 2.84978 2.84634C3.15522 2.54089 3.44612 2.3518 3.85338 2.19325C4.16101 2.07325 4.623 1.93143 5.47388 1.89234C6.27895 1.85598 6.59094 1.84507 8.21743 1.84325V1.84543ZM13.6587 3.29452C13.0806 3.29452 12.6115 3.76307 12.6115 4.34143C12.6115 4.91961 13.0806 5.3887 13.6587 5.3887C14.2369 5.3887 14.706 4.91961 14.706 4.34143C14.706 3.76325 14.2369 3.29416 13.6587 3.29416V3.29452ZM9.00032 4.51816C6.5253 4.51816 4.51864 6.52489 4.51864 8.99998C4.51864 11.4751 6.5253 13.4809 9.00032 13.4809C11.4753 13.4809 13.4813 11.4751 13.4813 8.99998C13.4813 6.52489 11.4752 4.51816 9.00014 4.51816H9.00032ZM9.00032 6.09089C10.6068 6.09089 11.9093 7.39325 11.9093 8.99998C11.9093 10.6065 10.6068 11.9091 9.00032 11.9091C7.39364 11.9091 6.09132 10.6065 6.09132 8.99998C6.09132 7.39325 7.39364 6.09089 9.00032 6.09089V6.09089Z" fill="#4B5563"/>
+                  </svg>
+                  </a>
+                </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/theme-switcher.js"></script>
+  <script src="js/help.js"></script>
+
+</body>
+
+</html>
