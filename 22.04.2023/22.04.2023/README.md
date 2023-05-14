@@ -1,13 +1,13 @@
 # Airbnb project
-
+# Front322 
 
 ## Setup
 
 **First time**
 
 ```bash
-git clone https://github.com/iliafilimonov1/Frontend-322-airbnb.git
-cd frontend-322-airbnb
+git clone https://github.com/https://github.com/BAraBanWasted/front322.git
+cd front322
 npm install
 ```
 
