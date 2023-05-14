@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  max-width: 1328px;
+  max-width: 1170px;
   width: 100%;
   margin: 0 auto;
 }
@@ -44,7 +44,8 @@ a {
 svg {
   vertical-align: middle;
   position: relative;
-  z-index: 0; /* возможно, придется поднять из-за плашки при наведении */
+  z-index: 0;
+  /* возможно, придется поднять из-за плашки при наведении */
 }
 
 /* header */
@@ -679,10 +680,75 @@ footer {
 
 
 
+/* table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 48px;
+}
+
+.table thead {
+  background-color: #222222;
+  color: white;
+  border: 1px solid white;
+}
+
+.table th {
+  padding: 15px;
+}
+
+.table td {
+  padding: 10px;
+}
+
+.table tbody {
+  font-size: 18px;
+  border: 1px solid white;
+}
+
+.table tbody tr:nth-child(2n) {
+  background-color: white;
+}
+
+.table tbody tr:nth-child(2n + 1) {
+  background-color: #d3d3d3;
+}
 
 
+
+
+
+/* snackbar */
+.snackbar {
+  color: #f1f1f1;
+  min-height: 45px;
+  min-width: 173px;
+  box-sizing: border-box;
+  visibility: hidden;
+  will-change: transform;
+  background: #222222;
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-size: 87%;
+  transition: visibility .3s, transform .3s;
+  display: inline-block;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  transform: translateY(100px);
+  box-shadow: 0 2px 5px #00000042;
+}
+
+.snackbar--visible {
+  visibility: visible;
+  transform: none;
+}
 
 /* атомарные классы */
+.w-200 {
+  width: 200px;
+}
+
 .mt-24px {
   margin-top: 24px;
 }
@@ -695,6 +761,10 @@ footer {
   margin-left: 36px;
 }
 
+.p-12 {
+  padding: 12px 24px;
+}
+
 .flex {
   display: flex;
   justify-content: space-between;
@@ -705,4 +775,12 @@ footer {
 .flex-column {
   display: flex;
   flex-direction: column;
+  align-self: baseline;
+  margin-bottom: 8px;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
